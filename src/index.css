@@ -1,13 +1,203 @@
-body {
+* {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  box-sizing: border-box;
+  outline: none;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+section {
+  height: 100vh;
+
+}
+.row {
+  display: flex;
+  height: 100%;
+}
+
+.form-area {
+  width: 64%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa;
+}
+
+form {
+width: 50%;
+}
+
+.form-area .text{
+  width: 50%;
+  text-align: left;
+  margin-bottom: 30px;
+}
+.form-area .text h3{
+  font-size: 20px;
+  margin-bottom: 35px;
+}
+.form-area .text p{
+  font-size: 12px;
+}
+.form-area .text p a{
+  font-weight: 600;
+  color: #1c7ed6;
+  text-decoration: none;
+}
+
+button,
+select,
+input {
+  width: 100%;
+  height: 45px;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  border: 0.1rem #dee2e6 solid;
+  background-color: transparent;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+input.error {
+  border: 0.1rem red solid;
+}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+input:focus ~ .label,
+input:not(:focus):valid ~ .label{
+  left: 20px;
+  top: -55px;
+  font-size: 11px;
+  opacity: 1;
+  background-color: #f8f9fa;
+  padding: 0.2rem;
+}
+
+.label {
+  position: relative;
+  pointer-events: none;
+  left: 20px;
+  top: -32px;
+  color: #868e96;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 0.25rem;
+  transition: 0.2s ease all;
+}
+.label.error{
+  color: red !important;
+}
+
+.input-groupp {
+  position: relative;
+}
+.input-groupp i {
+  position: absolute;
+  pointer-events: none;
+  font-size: 15px;
+  top: 15px;
+  right: 14px;
+  color: #343a40;
+
+}
+
+small.error {
+  color: red !important;
+  text-align: left;
+
+}
+.select-group {
+  margin-bottom: 18px;
+  position: relative;
+}
+.select-group::after {
+  content: "ˬ";
+  font-size: 2.5rem;
+  top: -16px;
+  right: 14px;
+  height: 10px;
+  position: absolute;
+  color: #343a40;
+
+}
+select {
+  padding-bottom: 0.5rem;
+  color: #868e96;
+}
+select {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.input-groupp small {
+  display: flex;
+  text-align: left;
+  font-size: 11px;
+  top: -10px;
+  position: relative;
+  color: #868e96;
+}
+.input-group small {
+  display: flex;
+  text-align: left;
+  font-size: 11px;
+  top: -10px;
+  position: relative;
+  color: #868e96;
+}
+
+button {
+  margin-top: 20px;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #868e96;
+  background-color: #e9ecef;
+  border: 0.1rem #e9ecef solid;
+}
+button.valid {
+  color: #ffffff;
+  background-color: #228be6;
+  border: none;
+}
+
+.bottom-text {
+  width: 50%;
+  margin-top: 30px;
+}
+.bottom-text p {
+  font-size: 12px;
+  line-height: 1.8;
+}
+.bottom-text p span {
+  color: #1c7ed6;
+  font-weight: bold;
+}
+
+/* BLUE AREA  */
+.text-area {
+  width: 36%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #228be6;
+}
+
+.dummy-texts {
+  width: 70%;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+.dummy-texts h3 {
+  margin-bottom: 50px;
+  text-align: center;
+}
+.dummy-texts p {
+  line-height: 1.5;
+  font-size: 14px;
 }
